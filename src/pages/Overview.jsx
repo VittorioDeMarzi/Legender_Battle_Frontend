@@ -8,6 +8,10 @@ export default function Overview() {
   const [loses, setLose] = useState(0);
 
   useEffect(() => {
+    loadTeamData();
+  }, []);
+
+  function loadTeamData() {
     const token = localStorage.getItem("token");
 
     fetch(import.meta.env.VITE_BACKEND + "/api/v1/legender_battle/team", {
@@ -31,8 +35,11 @@ export default function Overview() {
           setWins(data.wins);
           setLose(data.loses);
         }
+      })
+      .then((data) => {
+        loadTeamData();
       });
-  }, []);
+  }
 
   function createTeam() {
     const token = localStorage.getItem("token");
@@ -52,7 +59,15 @@ export default function Overview() {
           // Logga il codice di stato e il messaggio di errore
           throw new Error(`Error ${response.status}: ${text}`);
         })
-        .then();
+        .then((data) => {
+          setHasTeam(true);
+          setTeamName(data.teamName);
+          setWins(data.wins);
+          setLose(data.loses);
+        })
+        .catch((error) => {
+          console.error("Error creating team:", error);
+        });
     });
   }
 
@@ -66,7 +81,6 @@ export default function Overview() {
             <p>Team Name: {teamName}</p>
             <p>wins: {wins}</p>
             <p>loses {loses}</p>
-            
           </div>
         ) : (
           // Se l'utente non ha un team, permetti di crearne uno
