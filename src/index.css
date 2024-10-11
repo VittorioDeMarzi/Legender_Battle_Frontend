@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  @apply bg-hero-pattern bg-cover bg-center h-screen;
+  color: white;
+
+}
+
+input {
+  color: black;
+}

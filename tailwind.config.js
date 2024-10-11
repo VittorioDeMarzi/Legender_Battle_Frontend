@@ -1,8 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,js}"],
+  content: ["./src/**/*.{html,js,jsx}"],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        "hero-pattern": "url('/Users/supercoder/SuperCode/JAVA/Projekts/Legender_Battle/LB_Frontend/src/assets/images/cade-roberts-EpIUbeFrqwQ-unsplash.jpg')",
+      },
+    },
+    plugins: [],
   },
-  plugins: [],
-}
+};
