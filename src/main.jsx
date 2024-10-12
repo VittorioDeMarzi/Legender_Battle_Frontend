@@ -7,7 +7,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "./pages/Login.jsx";
 import Signup from "./pages/Signup.jsx";
 import NameYourTeam from "./pages/NameYourTeam.jsx";
-import UserHome from "./pages/Overview.jsx";
+import Overview from "./pages/Overview.jsx";
 
 const router = createBrowserRouter([
   {
@@ -27,8 +27,8 @@ const router = createBrowserRouter([
     element: <NameYourTeam />,
   },
   {
-    path: "/userhome",
-    element: <UserHome />,
+    path: "/overview",
+    element: <Overview />,
   },
 ]);
 

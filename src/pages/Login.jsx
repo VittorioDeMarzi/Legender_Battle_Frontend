@@ -29,7 +29,7 @@ export default function Login() {
       .then((data) => {
         console.log(data);
         localStorage.setItem("token", data.token);
-        navigate("/userhome");
+        navigate("/overview");
       });
   
   }
