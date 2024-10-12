@@ -5,8 +5,8 @@ import { useNavigate } from "react-router-dom";
 
 export default function Signup() {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const navigate = useNavigate();
+    const [password, setPassword] = useState("");
+    const navigate = useNavigate();
 
   function signup(event) {
     event.preventDefault();
@@ -15,8 +15,7 @@ export default function Signup() {
       password,
     };
 
-    fetch(
-      import.meta.env.VITE_BACKEND + "/api/v1/legender_battle/auth/signup",
+    fetch(import.meta.env.VITE_BACKEND + "/api/v1/legender_battle/auth/signup",
       {
         method: "POST",
         headers: {
@@ -24,8 +23,7 @@ export default function Signup() {
         },
         body: JSON.stringify(auth),
       }
-    )
-      .then((response) => {
+    ).then((response) => {
         if (response.ok) {
           console.log("sing up successful", response.json());
           return response.json();
