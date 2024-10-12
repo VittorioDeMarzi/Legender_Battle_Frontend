@@ -22,8 +22,7 @@ export default function HeroesSection() {
     }, [reload]);
     
     return (
-        <section>
-            <h3 className=" text-3xl">Your Heroes:</h3>
+        <section className="flex flex-col justify-between min-w-28">
             <YourHeroes allHeroes={allHeroes} />
             <AddHero setReload={setReload} />
         </section>

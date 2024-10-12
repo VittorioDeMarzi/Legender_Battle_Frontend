@@ -7,6 +7,8 @@ module.exports = {
         "hero-pattern": "url('/Users/supercoder/SuperCode/JAVA/Projekts/Legender_Battle/LB_Frontend/src/assets/images/cade-roberts-EpIUbeFrqwQ-unsplash.jpg')",
       },
     },
-    plugins: [],
+    plugins: [
+      require('daisyui'),
+    ],
   },
 };
