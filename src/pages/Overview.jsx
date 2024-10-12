@@ -5,10 +5,17 @@ import YourHeroes from "../components/YourHeroes";
 
 export default function Overview() {
   return (
-    <>
+/*     <>
       <Navbar />
       <section className="grid grid-cols-3 gap-4">
               <TeamInfo />
+              <HeroesSection />
+      </section>
+    </> */
+    <>
+      <Navbar />
+      <section className="grid grid-cols-2 gap-4">
+             <TeamInfo />
               <HeroesSection />
       </section>
     </>

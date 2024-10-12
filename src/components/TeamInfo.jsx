@@ -72,7 +72,7 @@ export default function TeamInfo() {
 
   return (
     <>
-      <div className="bg-white bg-opacity-75 p-6 rounded-lg shadow-md w-96 text-black">
+      <div className="bg-white bg-opacity-75 p-6 rounded-lg shadow-md w-96 text-black col-span-2">
         {hasTeam ? (
           // Se l'utente ha già un team, lo mostri
           <div>
