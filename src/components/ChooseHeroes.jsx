@@ -50,15 +50,15 @@ export default function ChooseHeroes() {
   function submitHeroes() {
     const token = localStorage.getItem("token");
     const heroIds = {
-        hero1Id: parseInt(selectedHeroes.rookie),
-        hero2Id: parseInt(selectedHeroes.normal1),
-        hero3Id: parseInt(selectedHeroes.normal2),
-        hero4Id: parseInt(selectedHeroes.veteran),
-        hero5Id: parseInt(selectedHeroes.legendary)
-    }
+      hero1Id: Number(selectedHeroes.rookie),
+      hero2Id: Number(selectedHeroes.normal1),
+      hero3Id: Number(selectedHeroes.normal2),
+      hero4Id: Number(selectedHeroes.veteran),
+      hero5Id: Number(selectedHeroes.legendary),
+    };
 
-      console.log(heroIds)
-      console.log(selectedHeroes)
+    console.log(heroIds);
+    console.log(selectedHeroes);
     fetch(
       `${
         import.meta.env.VITE_BACKEND
@@ -69,13 +69,13 @@ export default function ChooseHeroes() {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
         },
-          body: JSON.stringify(heroIds), // Send hero IDs
+        body: JSON.stringify(heroIds), // Send hero IDs
       }
     )
       .then((response) => {
         if (!response.ok)
-            throw new Error(`HTTP error! Status: ${response.status}`);
-          console.log(response)
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        console.log(response);
         return null;
       })
       .catch((error) => {
@@ -100,7 +100,7 @@ export default function ChooseHeroes() {
           <select
             id="rookieSelect"
             onChange={(e) => handleSelectChange(e, "rookie")}
-            value={selectedHeroes.rookie}
+            value={selectedHeroes.rookie.id}
           >
             <option value="" disabled selected>
               Select an Hero
@@ -171,9 +171,8 @@ export default function ChooseHeroes() {
           Legendär:
           <select
             id="legendSelect"
-                      onChange={(e) => handleSelectChange(e, "legendary")}
+            onChange={(e) => handleSelectChange(e, "legendary")}
             value={selectedHeroes.legendary}
-                      
           >
             <option value="" disabled selected>
               Select an Hero

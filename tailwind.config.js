@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        "hero-pattern": "url('/Users/supercoder/SuperCode/JAVA/Projekts/Legender_Battle/LB_Frontend/src/assets/images/cade-roberts-EpIUbeFrqwQ-unsplash.jpg')",
+        "hero-pattern": "url('./src/assets/images/cade-roberts-EpIUbeFrqwQ-unsplash.jpg')",
       },
     },
     plugins: [

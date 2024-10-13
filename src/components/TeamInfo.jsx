@@ -5,10 +5,11 @@ export default function TeamInfo() {
   const [hasTeam, setHasTeam] = useState(false);
   const [wins, setWins] = useState(0);
   const [loses, setLose] = useState(0);
+  const [reloadData, setReloadData] = useState(false);
 
   useEffect(() => {
     loadTeamData();
-  }, []);
+  }, [reloadData]);
 
   function loadTeamData() {
     const token = localStorage.getItem("token");
@@ -35,13 +36,15 @@ export default function TeamInfo() {
           setLose(data.loses);
         }
       })
-      .then((data) => {
-        loadTeamData();
+      .catch((error) => {
+        console.error("Error loading team data:", error);
       });
   }
 
   function createTeam() {
     const token = localStorage.getItem("token");
+
+    console.log(JSON.stringify(teamName))
 
     fetch(import.meta.env.VITE_BACKEND + "/api/v1/legender_battle/team", {
       method: "POST",
@@ -49,7 +52,7 @@ export default function TeamInfo() {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      body: JSON.stringify({ teamName }),
+      body: JSON.stringify({teamName}),
     }).then((response) => {
       if (response.ok) return response.json();
       return response
@@ -63,6 +66,7 @@ export default function TeamInfo() {
           setTeamName(data.teamName);
           setWins(data.wins);
           setLose(data.loses);
+          setReloadData((prev) => !prev);
         })
         .catch((error) => {
           console.error("Error creating team:", error);
