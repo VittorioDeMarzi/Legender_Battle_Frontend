@@ -11,10 +11,13 @@
 
 body {
   @apply bg-hero-pattern bg-cover bg-center h-screen;
-  color: white;
-
+color: white;
 }
 
 input {
+  color: black;
+}
+
+option {
   color: black;
 }

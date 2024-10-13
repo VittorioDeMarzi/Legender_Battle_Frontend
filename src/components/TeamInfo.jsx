@@ -72,17 +72,19 @@ export default function TeamInfo() {
 
   return (
     <>
-      <div className="bg-white bg-opacity-75 p-6 rounded-lg shadow-md w-96 text-black col-span-2">
+      <div className="bg-white bg-opacity-75 p-6 rounded-lg shadow-md text-black col-span-2 w-full flex flex-col justify-around text-center ">
         {hasTeam ? (
-          // Se l'utente ha già un team, lo mostri
-          <div>
-            <h1>Your Team</h1>
-            <p>Team Name: {teamName}</p>
-            <p>wins: {wins}</p>
-            <p>loses {loses}</p>
-          </div>
+          // If User has already a team
+          <>
+            <h1 className="">Your Team</h1>
+            <div className="flex justify-around">
+              <p>Team Name: {teamName}</p>
+              <p>wins: {wins}</p>
+              <p>loses {loses}</p>
+            </div>
+          </>
         ) : (
-          // Se l'utente non ha un team, permetti di crearne uno
+          // If the User doesn't, it is possible to add one
           <div>
             <h1>Create Your Team</h1>
             <input
