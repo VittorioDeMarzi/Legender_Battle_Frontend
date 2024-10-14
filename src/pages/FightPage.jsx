@@ -45,7 +45,7 @@ export default function FightPage() {
   return (
     <>
         <Navbar />
-      <section className="flex justify-center flex-col items-center gap-9">
+      <section className="flex justify-center flex-col items-center gap-9 text-white">
         {pointsAttacker > pointsOpponent ? (
           <>
               <h2 className="text-xl ">You Win</h2>
@@ -67,6 +67,7 @@ export default function FightPage() {
         )}
         <p>Your points: {pointsAttacker}</p>
         <p>Opponents points: {pointsOpponent}</p>
+        <p>{battleMessage}</p>
       </section>
     </>
   );
