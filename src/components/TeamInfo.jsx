@@ -44,7 +44,7 @@ export default function TeamInfo() {
   function createTeam() {
     const token = localStorage.getItem("token");
 
-    console.log(JSON.stringify(teamName))
+    console.log(JSON.stringify(teamName));
 
     fetch(import.meta.env.VITE_BACKEND + "/api/v1/legender_battle/team", {
       method: "POST",
@@ -52,7 +52,7 @@ export default function TeamInfo() {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      body: JSON.stringify({teamName}),
+      body: JSON.stringify({ teamName }),
     }).then((response) => {
       if (response.ok) return response.json();
       return response
@@ -67,6 +67,7 @@ export default function TeamInfo() {
           setWins(data.wins);
           setLose(data.loses);
           setReloadData((prev) => !prev);
+          window.location.reload();
         })
         .catch((error) => {
           console.error("Error creating team:", error);
@@ -76,7 +77,7 @@ export default function TeamInfo() {
 
   return (
     <>
-      <div className="bg-white bg-opacity-75 p-6 rounded-lg shadow-xl shadow-white text-black col-span-2 w-full flex flex-col justify-around text-center ">
+      <div className="bg-white bg-opacity-75 p-6 rounded-lg shadow-xl shadow-white text-black col-span-2 w-full flex flex-col justify-around text-center mb-8">
         {hasTeam ? (
           // If User has already a team
           <>

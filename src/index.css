@@ -11,7 +11,7 @@
 
 body {
   @apply bg-hero-pattern bg-cover bg-center h-screen;
-color: white;
+
 }
 
 input {

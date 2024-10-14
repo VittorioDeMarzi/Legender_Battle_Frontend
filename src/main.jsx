@@ -32,7 +32,7 @@ const router = createBrowserRouter([
     element: <ChooseOpponentPage />,
   },
   {
-    path: "/fight/:id",
+    path: "/fight/:userId",
     element: <FightPage />,
   },
 ]);

@@ -7,16 +7,13 @@ import AddHero from "../components/AddHero";
 import ChooseHeroes from "../components/ChooseHeroes";
 
 export default function Overview() {
-
-
   return (
-
     <>
       <Navbar />
-      <section className="grid grid-cols-1 gap-4 p-8">
-        <TeamInfo />
+      <section className="items-center p-8 flex flex-col item-centre gap-16">
+      <TeamInfo />
         <HeroesSection />
-        <ChooseHeroes className=" text-center" />  
+      <ChooseHeroes />
       </section>
     </>
   );

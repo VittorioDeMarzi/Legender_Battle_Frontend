@@ -26,7 +26,7 @@ export default function HeroesSection() {
   }, [reload]);
 
   return (
-    <section className="flex flex-col justify-between">
+    <section className="grid grid-cols-2">
       <YourHeroes allHeroes={allHeroes} />
       <AddHero setReload={setReload} />
     </section>

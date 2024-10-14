@@ -35,14 +35,15 @@ export default function OpponentList() {
   }, []);
 
   const handleTeamClick = (userId) => {
+    console.log(userId)
     navigate(`/fight/${userId}`);
   };
 
   return (
     <section className="grid grid-cols-2">
-      {allPublicTeams.map((team, index) => (
+      {allPublicTeams.map((team) => (
         <TeamCard
-          key={index}
+          key={team.userId}
           team={team}
           onClick={() => handleTeamClick(team.userId)}
         />
