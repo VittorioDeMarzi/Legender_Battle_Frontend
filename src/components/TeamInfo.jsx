@@ -81,24 +81,25 @@ export default function TeamInfo() {
         {hasTeam ? (
           // If User has already a team
           <>
-            <h1 className="">Your Team</h1>
+            
             <div className="flex justify-around">
-              <p>Team Name: {teamName}</p>
+              <p>{teamName}</p>
               <p>wins: {wins}</p>
               <p>loses {loses}</p>
             </div>
           </>
         ) : (
           // If the User doesn't, it is possible to add one
-          <div>
+          <div className="grid grid-col gap-4">
             <h1>Create Your Team</h1>
             <input
               type="text"
               value={teamName}
               onChange={(e) => setTeamName(e.target.value)}
               placeholder="Enter your team name"
+              className="mt-1 block w-full p-2 border border-gray-300 rounded"
             />
-            <button onClick={createTeam}>Create Team</button>
+            <button className=" hover:bg-orange-400 bg-orange-600 text-white font-bold py-2 rounded mb-5" onClick={createTeam}>Create Team</button>
           </div>
         )}
       </div>

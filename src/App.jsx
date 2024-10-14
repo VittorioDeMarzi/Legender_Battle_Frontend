@@ -8,7 +8,7 @@ export default function App() {
     <>
       <Navbar />
       <section className=" flex flex-col justify-center items-center absolute inset-0">
-        <h1 className=" font-bold text-8xl p-9 text-center">Are you ready to fight?</h1>
+        <h1 className=" font-bold text-8xl p-9 text-center text-white">Are you ready to fight?</h1>
         <Link to="/login">
           <h1>
             <button className="bg-orange-600 text-white font-bold py-2 rounded p-10">

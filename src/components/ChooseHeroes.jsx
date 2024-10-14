@@ -102,7 +102,10 @@ export default function ChooseHeroes() {
           Rookie:
           <select
             id="rookieSelect"
-            onChange={(e) => handleSelectChange(e, "rookie")}
+            onChange={(e) => handleSelectChange(e, "rookie")
+              
+            }
+            className="mt-1 block w-full p-2 border border-gray-300 rounded"
           >
             <option value="" disabled selected>
               Select an Hero
@@ -120,6 +123,7 @@ export default function ChooseHeroes() {
           <select
             id="normalSelect1"
             onChange={(e) => handleSelectChange(e, "normal1")}
+            className="mt-1 block w-full p-2 border border-gray-300 rounded"
           >
             <option value="" disabled selected>
               Select an Hero
@@ -137,6 +141,7 @@ export default function ChooseHeroes() {
           <select
             id="normalSelect2"
             onChange={(e) => handleSelectChange(e, "normal2")}
+            className="mt-1 block w-full p-2 border border-gray-300 rounded"
           >
             <option value="" disabled selected>
               Select an Hero
@@ -154,6 +159,7 @@ export default function ChooseHeroes() {
           <select
             id="veteranSelect"
             onChange={(e) => handleSelectChange(e, "veteran")}
+            className="mt-1 block w-full p-2 border border-gray-300 rounded"
           >
             <option value="" disabled selected>
               Select an Hero
@@ -171,6 +177,7 @@ export default function ChooseHeroes() {
           <select
             id="legendSelect"
             onChange={(e) => handleSelectChange(e, "legendary")}
+            className="mt-1 block w-full p-2 border border-gray-300 rounded"
           >
             <option value="" disabled selected>
               Select an Hero

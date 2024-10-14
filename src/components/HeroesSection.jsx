@@ -26,7 +26,7 @@ export default function HeroesSection() {
   }, [reload]);
 
   return (
-    <section className="grid grid-cols-2">
+    <section className="grid grid-cols-2 gap-6">
       <YourHeroes allHeroes={allHeroes} />
       <AddHero setReload={setReload} />
     </section>

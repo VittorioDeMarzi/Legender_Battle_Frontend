@@ -27,19 +27,19 @@ export default function AddHero({ setReload }) {
 
   return (
     <>
-      <div className="flex justify-around flex-col items-center">
-        <div className="flex flex-col text-white">
-          <label htmlFor="">Hero Name</label>
+      <div className="flex justify-around flex-col bg-white bg-opacity-75 p-6 rounded-lg shadow-md w-96">
+        <div className="flex flex-col">
+          <label htmlFor="" className="block text-gray-700">Hero Name</label>
           <input
             onChange={(e) => setName(e.target.value)}
-            className="input input-bordered text-black"
+            className="mt-1 block w-full p-2 border border-gray-300 rounded"
             type="text"
           />
         </div>
 
-        <div className="flex flex-col text-white">
-          <label htmlFor="type-select">Type:</label>
-          <select id="type-select" value={heroTypeId} onChange={handleChange} className=" text-black">
+        <div className="flex flex-col">
+          <label htmlFor="type-select" className="block text-gray-700">Type:</label>
+          <select id="type-select" value={heroTypeId} onChange={handleChange} className="mt-1 block w-full p-2 border border-gray-300 rounded">
             <option value="" disabled>
               --Please choose an option--
             </option>
