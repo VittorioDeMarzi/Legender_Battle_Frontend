@@ -7,6 +7,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "./pages/Login.jsx";
 import Signup from "./pages/Signup.jsx";
 import Overview from "./pages/Overview.jsx";
+import ChooseOpponentPage from "./pages/ChooseOpponentPage.jsx";
+import FightPage from "./pages/FightPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +26,14 @@ const router = createBrowserRouter([
   {
     path: "/overview",
     element: <Overview />,
+  },
+  {
+    path: "/choose-opponent",
+    element: <ChooseOpponentPage />,
+  },
+  {
+    path: "/fight/:id",
+    element: <FightPage />,
   },
 ]);
 

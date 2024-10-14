@@ -16,7 +16,7 @@ export default function Overview() {
       <section className="grid grid-cols-1 gap-4 p-8">
         <TeamInfo />
         <HeroesSection />
-        <ChooseHeroes />  
+        <ChooseHeroes className=" text-center" />  
       </section>
     </>
   );

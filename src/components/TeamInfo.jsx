@@ -9,7 +9,7 @@ export default function TeamInfo() {
 
   useEffect(() => {
     loadTeamData();
-  }, [reloadData]);
+  }, []);
 
   function loadTeamData() {
     const token = localStorage.getItem("token");
@@ -76,7 +76,7 @@ export default function TeamInfo() {
 
   return (
     <>
-      <div className="bg-white bg-opacity-75 p-6 rounded-lg shadow-md text-black col-span-2 w-full flex flex-col justify-around text-center ">
+      <div className="bg-white bg-opacity-75 p-6 rounded-lg shadow-xl shadow-white text-black col-span-2 w-full flex flex-col justify-around text-center ">
         {hasTeam ? (
           // If User has already a team
           <>
